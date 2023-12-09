@@ -1,0 +1,69 @@
+{
+    // Disable automatic indentation detection
+    // and force a tab size of 4
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+
+    // Link up docstring template
+    "autoDocstring.customTemplatePath": "resources/docstring_template.mustache",
+
+    // Switch off Pylance, since we're using MyPy instead
+    "python.analysis.typeCheckingMode": "off",
+
+    // Pytest configuration
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}",
+
+    // Spell checker
+    "cSpell.language": "en",
+    "cSpell.words": [
+        "Akai",
+        "Appassionata",
+        "capsys",
+        "Cimbalom",
+        "classmethod",
+        "deinitialize",
+        "deinitialized",
+        "docstrings",
+        "Dpad",
+        "Drumline",
+        "flmidimsg",
+        "hissy",
+        "incontrol",
+        "jank",
+        "janky",
+        "keyswitch",
+        "keyswitches",
+        "klevgrand",
+        "Kontrol",
+        "Korg",
+        "laggy",
+        "launchkey",
+        "Mackie",
+        "Maudio",
+        "MIDIIN",
+        "mypy",
+        "notif",
+        "Novation",
+        "omni",
+        "playhead",
+        "plugins",
+        "pmeflags",
+        "rect",
+        "Roadmap",
+        "RRGGBB",
+        "Slicex",
+        "sorta",
+        "Sostenuto",
+        "staticmethod",
+        "strat",
+        "sysex",
+        "Tytel",
+        "Univ",
+        "xfer"
+    ],
+}
