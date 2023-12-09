@@ -1,0 +1,57 @@
+"""
+devices > maudio > hammer88pro > mackie_mappings
+
+Random notes on how the Hammer 88 pro behaves when using its standard Mackie
+mappings. May be used in the future to reduce the setup complexity for the
+Hammer 88 Pro controller.
+
+Authors:
+* Miguel Guthridge [hdsq@outlook.com.au, HDSQ#2154]
+
+This code is licensed under the GPL v3 license. Refer to the LICENSE file for
+more details.
+"""
+
+{
+    (0xB0, 0x0F, 0x00-7): {  # data2 refers to fader button number
+        (0xB0, 0x2F, 0x07): "arm",
+        (0xB0, 0x2F, 0x01): "select",
+        (0xB0, 0x2F, 0x02): "mute",
+        (0xB0, 0x2F, 0x03): "solo",
+        "movement": """
+0xB0 0F [fader num]        # Choose fader
+0xB0 2F 40                 # Start movement
+0xB0 [fader num] [value]   # Give value
+0xB0 (20 + [fader num]) 00 # No clue what this is for
+0xB0 0F [fader num]        # Choose fader again
+0xB0 2F 00                 # End movement
+"""
+    },
+    (0xB0, 0x0F, 0x08): {
+        (0xB0, 0x2F, 0x02): "back",
+    },
+    (0xB0, 0x0F, 0x0A): {
+        (0xB0, 0x2F, 0x01): "bank prev",
+        (0xB0, 0x2F, 0x03): "bank next",
+    },
+    (0xB0, 0x0F, 0x0B): {
+        (0xB0, 0x2F, 0x02): "shift",
+    },
+    (0xB0, 0x0F, 0x0D): {
+        (0xB0, 0x2F, 0x02): "jog select",
+        (0xB0, 0x2F, 0x04): "jog left",
+        (0xB0, 0x2F, 0x00): "jog right",
+    },
+    (0xB0, 0x0F, 0x0E): {
+        (0xB0, 0x2F, 0x01): "rew",
+        (0xB0, 0x2F, 0x02): "ff",
+        (0xB0, 0x2F, 0x03): "stop",
+        (0xB0, 0x2F, 0x04): "play",
+        (0xB0, 0x2F, 0x05): "rec"
+    },
+    (0xB0, 0x0F, 0x0F): {
+        (0xB0, 0x2F, 0x03): "loop",
+    },
+    (0xB0, 0x40-7, 0x41): "knob up",
+    (0xB0, 0x40-7, 0x01): "knob down"
+}
